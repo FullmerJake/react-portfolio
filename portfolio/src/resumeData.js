@@ -2,7 +2,6 @@ let resumeData = {
     "imagebaseurl":"https://FullmerJake.github.io/",
     "name": "Jake Fullmer",
     "role": "Full Stack Web Developer",
-    "linkedinId":"LinkedIn",
     "roleDescription": "My primary role is to make sure that you have the best product possible and create the best relatioship between you and your clients.",
     "socialLinks":[
         {
@@ -65,22 +64,32 @@ let resumeData = {
     ],
     "portfolio":[
       {
-        "name":"project1",
+        "name":"Agile Peak",
         "description":"mobileapp",
         "imgurl":"images/portfolio/phone.jpg"
       },
       {
-        "name":"project2",
+        "name":"Super Jumpy Jump Man",
         "description":"mobileapp",
         "imgurl":"images/portfolio/project.jpg"
       },
       {
-        "name":"project3",
+        "name":"Git It Done",
         "description":"mobileapp",  
         "imgurl":"images/portfolio/project2.png"
       },
       {
-        "name":"project4",
+        "name":"Run Buddy",
+        "description":"mobileapp",
+        "imgurl":"images/portfolio/phone.jpg"
+      },
+      {
+        "name":"Weather Dashboard",
+        "description":"mobileapp",
+        "imgurl":"images/portfolio/phone.jpg"
+      },
+      {
+        "name":"Note Taker",
         "description":"mobileapp",
         "imgurl":"images/portfolio/phone.jpg"
       }
