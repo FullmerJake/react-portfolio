@@ -1,45 +1,29 @@
-import React, { useState } from 'react';
-import Nav from './components/Nav';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import ContactForm from './components/Contact';
+import React, { Component } from 'react';
+import Header from '../src/components/Header';
+import About from '../src/components/About';
+import Resume from '../src/components/Resume';
+import Portfolio from '../src/components/Portfolio';
+import Testimonials from '../src/components/Testimonials';
+import Contact from '../src/components/Contact';
+import Footer from '../src/components/Footer';
 
-function App() {
-  const [categories] = useState([
-    {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
-    },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
-  ]);
+import resumeData from './resumeData';
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header resumeData={resumeData}/>
+        <About resumeData={resumeData}/>
+        <Resume resumeData={resumeData}/>
+        <Portfolio resumeData={resumeData}/>
+        <Testimonials resumeData={resumeData}/>
+        <Contact resumeData={resumeData}/>
+        <Footer resumeData={resumeData}/>
+      </div>
+    )
+  };
 
-  const [contactSelected, setContactSelected] = useState(false);
-
-  return (
-    <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
-      <main>
-        {!contactSelected ? (
-          <>
-            <Gallery currentCategory={currentCategory}></Gallery>
-            <About></About>
-          </>
-        ) : (
-          <ContactForm></ContactForm>
-        )}
-      </main>
-    </div>
-  );
 }
 
 export default App;
