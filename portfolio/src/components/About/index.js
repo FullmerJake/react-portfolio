@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 export default class About extends Component {
   render() {
     let resumeData = this.props.resumeData;
@@ -6,7 +7,7 @@ export default class About extends Component {
       <section id="about">
          <div className="row">
             <div className="three columns">
-               <img className="profile-pic"  src="/images/profilepic" alt="" />
+               <img className="profile-pic"  href="../src/images/profilepic.jpg" alt="" />
             </div>
             <div className="nine columns main-col">
                <h2>About Me</h2>

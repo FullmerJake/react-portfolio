@@ -13,6 +13,11 @@ let resumeData = {
           "name":"github",
           "url":"http://github.com/FullmerJake",
           "className":"fa fa-github"
+        },
+        {
+          "name":"facebook",
+          "url": "https://www.facebook.com/jake.fullmer.3",
+          "className": "fa fa-facebook"
         }
       ],
     "aboutme":"I have been involved in programming since high school but only took the jump into full time development recently. I recieved a BA in Stage Mangagement, where I learned how to best connect the technical world of theatre with the physical people that experience it. I am now working on bringing that same connectivity into the web development world.",
@@ -99,16 +104,6 @@ let resumeData = {
         "description":"A simple note taking application.",
         "imgurl":"images/portfolio/phone.jpg",
         "href":"https://guarded-escarpment-16875.herokuapp.com/"
-      }
-    ],
-    "testimonials":[
-      {
-        "description":"Jake is such a swell guy to work with!",
-        "name":"The Best Reviewer"
-      },
-      {
-        "description":"I found Jake such a JOY to work with!",
-        "name":"The Second Best Reviewer"
       }
     ]
   }

@@ -1,65 +1,74 @@
-import React from "react";
+import React, { useState } from 'react';
 
-export default class Contact extends React.Component {
-	render() {
-		return (
-			<div id="contact" className="container text-center my-5">
-				<h1 className="mb-3">
-					Contact
-				</h1>
-				<form
-					action="https://formspree.io/example@email.com"
-					method="POST">
-					<div className="form-group">
-						<div className="row">
-							<div className="col-12 col-sm-12 col-md-6 mx-auto">
-								<input
-									type="text"
-									name="name"
-									className="form-control form-control-lg"
-									id="name"
-									placeholder="Name"
-								/>
-							</div>
-						</div>
+const Contact = ({ data }) => {
+   const [url, setUrl] = useState('mailto:test@example.com?subject=subject&body=body');
+   const [name, setName] = useState('');
+   const [subject, setSubject] = useState('');
+   const [email, setEmail] = useState('');
+   const [message, setMessage] = useState('');
+
+   console.log(data)
+
+    const handleClick = (e) => {
+       e.preventDefault();
+      window.open(`mailto:${email}?subject=${subject}&body=${name}: ${message}`);
+    }
+    
+
+    return (
+    	<section id="contact">
+        	<div className="row section-head">
+				<div className="two columns header-col">
+					<h1><span>Contact Me!</span></h1>
+				</div>
+
+				<div className="ten columns">
+					<p className="lead">{data?.message}</p>
+				</div>
+         	</div>
+
+         	<div className="row">
+				<div className="twelve columns">
+					<form id="contactForm" name="contactForm">
+							<fieldset>
+								<div>
+									<label htmlFor="contactName">Name <span className="required">*</span></label>
+									<input value={name} type="text" defaultValue="" size="35" id="contactName" name="contactName" onChange={e => setName(e.target.value)}/>
+								</div>
+
+								<div>
+									<label htmlFor="contactEmail">Email <span className="required">*</span></label>
+									<input value={email} type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail" onChange={e=> setEmail(e.target.value)}/>
+								</div>
+
+								<div>
+									<label htmlFor="contactSubject">Subject</label>
+									<input value={subject} type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={e => setSubject(e.target.value)}/>
+								</div>
+
+								<div>
+									<label htmlFor="contactMessage">Message <span className="required">*</span></label>
+									<textarea value={message} onChange={e => setMessage(e.target.value)} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+								</div>
+
+								<div>
+									<button type='submit' onClick={handleClick} className="submit">Submit</button>
+									<span id="image-loader">
+										<img alt="" src="images/loader.gif" />
+									</span>
+								</div>
+							</fieldset>
+						</form>
+
+					<div id="message-warning"> Error boy</div>
+					<div id="message-success">
+						<i className="fa fa-check"></i>Your message was sent, thank you!<br />
 					</div>
-					<div className="form-group">
-						<div className="row">
-							<div className="col-12 col-sm-12 col-md-6 mx-auto">
-								<input
-									type="email"
-									name="_replyto"
-									className="form-control form-control-lg"
-									id="exampleFormControlInput1"
-									placeholder="Your email"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="form-group">
-						<div className="row">
-							<div className="col-12 col-sm-12 col-md-6 mx-auto">
-								<textarea
-									name="message"
-									className="form-control form-control-lg"
-									id="exampleFormControlTextarea1"
-									rows="3"
-									placeholder="Write your message..."
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="row text-md-right text-sm-center">
-						<div className="col-12 col-sm-12 col-md-6 mx-auto">
-							<button
-								type="submit"
-								className="btn btn-primary mb-2 hidden">
-								Submit
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		);
-	}
+				</div>
+
+      		</div>
+   		</section>
+    );
 }
+
+export default Contact;
