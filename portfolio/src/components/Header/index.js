@@ -6,7 +6,7 @@ export default class Header extends Component {
       <React.Fragment>
       
       <header id="home">
-         <nav id="nav-wrap">
+         <nav id="nav-wrap" className="col-12 col-sm-12 ">
             <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
           <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
             <ul id="nav" className="nav">
@@ -14,14 +14,13 @@ export default class Header extends Component {
                <li><a className="smoothscroll" href="#about">About</a></li>
              <li><a className="smoothscroll" href="#resume">Resume</a></li>
                <li><a className="smoothscroll" href="#portfolio">Works</a></li>
-               <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
                <li><a className="smoothscroll" href="#contact">Contact</a></li>
             </ul>
          </nav>
 
          <div className="row banner">
             <div className="banner-text">
-               <h1 className="responsive-headline">Hello! My name is {resumeData.name}.</h1>
+               <h1 className="responsive-headline">{resumeData.name}</h1>
                <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I work as a {resumeData.role}.{resumeData.roleDescription}
                </h3>
                <hr/>

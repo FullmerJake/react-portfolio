@@ -65,33 +65,40 @@ let resumeData = {
     "portfolio":[
       {
         "name":"Agile Peak",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/phone.jpg"
+        "description":"A classic text adventure game.",
+        "imgurl":"images/portfolio/phone.jpg",
+        "href":"https://agile-peak-21122.herokuapp.com/login"
       },
       {
         "name":"Super Jumpy Jump Man",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/project.jpg"
+        "description":"A browser game, reminicent of old arcade games.",
+        "imgurl":"images/portfolio/project.jpg",
+        "href":"https://jakesquaredandacharles.github.io/PlayingAndGaming/"
+        
       },
       {
         "name":"Git It Done",
-        "description":"mobileapp",  
-        "imgurl":"images/portfolio/project2.png"
+        "description":"A search engine to find git issues to work on.",  
+        "imgurl":"images/portfolio/project2.png",
+        "href":"https://fullmerjake.github.io/git-it-done/"
       },
       {
         "name":"Run Buddy",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/phone.jpg"
+        "description":"A website to help get in shape.",
+        "imgurl":"images/portfolio/phone.jpg",
+        "href":"https://fullmerjake.github.io/horiseon-refactored/"
       },
       {
-        "name":"Weather Dashboard",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/phone.jpg"
+        "name":"Book Search Engine",
+        "description":"An application to help you plan your next book and adventure.",
+        "imgurl":"images/portfolio/phone.jpg",
+        "href":"https://salty-forest-30767.herokuapp.com/"
       },
       {
         "name":"Note Taker",
-        "description":"mobileapp",
-        "imgurl":"images/portfolio/phone.jpg"
+        "description":"A simple note taking application.",
+        "imgurl":"images/portfolio/phone.jpg",
+        "href":"https://guarded-escarpment-16875.herokuapp.com/"
       }
     ],
     "testimonials":[

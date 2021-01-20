@@ -3,7 +3,6 @@ import Header from '../src/components/Header';
 import About from '../src/components/About';
 import Resume from '../src/components/Resume';
 import Portfolio from '../src/components/Portfolio';
-import Testimonials from '../src/components/Testimonials';
 import Contact from '../src/components/Contact';
 import Footer from '../src/components/Footer';
 
@@ -17,7 +16,6 @@ class App extends Component {
         <About resumeData={resumeData}/>
         <Resume resumeData={resumeData}/>
         <Portfolio resumeData={resumeData}/>
-        <Testimonials resumeData={resumeData}/>
         <Contact resumeData={resumeData}/>
         <Footer resumeData={resumeData}/>
       </div>

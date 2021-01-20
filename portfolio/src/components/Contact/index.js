@@ -1,26 +1,65 @@
-import React, { Component } from 'react';
-export default class ContactUs extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <section id="contact">
-          <div className="row section-head">
-            <div className="ten columns">
-              <p className="lead">
-                If you have any questions, or would like to get a hold of me, just click on any of these icons!
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <aside className="eigth columns footer-widgets">
-              <div className="widget">
-                <h4>Linkedin :
-                  {resumeData.linkedinId}
-                </h4>
-              </div>
-            </aside>
-          </div>
-        </section>
-        );
-  }
+import React from "react";
+
+export default class Contact extends React.Component {
+	render() {
+		return (
+			<div id="contact" className="container text-center my-5">
+				<h1 className="mb-3">
+					Contact
+				</h1>
+				<form
+					action="https://formspree.io/example@email.com"
+					method="POST">
+					<div className="form-group">
+						<div className="row">
+							<div className="col-12 col-sm-12 col-md-6 mx-auto">
+								<input
+									type="text"
+									name="name"
+									className="form-control form-control-lg"
+									id="name"
+									placeholder="Name"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="form-group">
+						<div className="row">
+							<div className="col-12 col-sm-12 col-md-6 mx-auto">
+								<input
+									type="email"
+									name="_replyto"
+									className="form-control form-control-lg"
+									id="exampleFormControlInput1"
+									placeholder="Your email"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="form-group">
+						<div className="row">
+							<div className="col-12 col-sm-12 col-md-6 mx-auto">
+								<textarea
+									name="message"
+									className="form-control form-control-lg"
+									id="exampleFormControlTextarea1"
+									rows="3"
+									placeholder="Write your message..."
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="row text-md-right text-sm-center">
+						<div className="col-12 col-sm-12 col-md-6 mx-auto">
+							<button
+								type="submit"
+								className="btn btn-primary mb-2 hidden">
+								Submit
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		);
+	}
 }

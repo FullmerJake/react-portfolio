@@ -6,7 +6,7 @@ export default class Footer extends Component {
     return (
       <footer>
       <div className="row">
-        <div className="twelve columns">
+        <div className="col-12 col-sm-12 col-md-6 mx-auto">
           <ul className="social-links">
             {
               resumeData.socialLinks && resumeData.socialLinks.map((item)=>{
