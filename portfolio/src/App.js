@@ -1,25 +1,40 @@
-import React, { Component } from 'react';
-import Header from '../src/components/Header';
-import About from '../src/components/About';
-import Portfolio from '../src/components/Portfolio';
-import Contact from '../src/components/Contact';
-import Footer from '../src/components/Footer';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import resumeData from './resumeData';
+// import custom components
+import Header from './components/Header';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import Resume from './pages/Resume';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import NoMatch from './pages/NoMatch';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header resumeData={resumeData}/>
-        <About resumeData={resumeData}/>
-        <Portfolio resumeData={resumeData}/>
-        <Contact resumeData={resumeData}/>
-        <Footer resumeData={resumeData}/>
+// import styles
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-typist/dist/Typist.css';
+import './App.css';
+
+function App(){
+  return (
+    <Router>
+      <ScrollToTop />
+      <div className="App">
+        <Header/>
+        <main>
+          <Switch>
+            <Route exact path="/about" component={About} />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/contact" component={Contact} />
+            <Route path="/*" component={NoMatch} />
+          </Switch>
+        </main>
+        <Footer/>
       </div>
-    )
-  };
-
+    </Router>
+  );
 }
 
 export default App;

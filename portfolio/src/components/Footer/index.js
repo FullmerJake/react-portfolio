@@ -1,29 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Footer extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <footer>
-      <div className="row">
-        <div className="col-12 col-sm-12 col-md-6 mx-auto">
-          <ul className="social-links">
-            {
-              resumeData.socialLinks && resumeData.socialLinks.map((item)=>{
-                return(
-                  <li>
-                    <a href={item.url}>
-                    <i className={item.className} />
-                    </a>
-                  </li>
-                )
-              })
-            }
-          </ul>
-        </div>
-        <div id="go-top"><a className="smoothscroll" title="Back to Top" href="#home"><i className="icon-up-open" /></a></div>
-      </div>
+// import react-bootstrap components
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+// import custom components
+import ContactIcons from '../ContactIcons'
+
+function Footer() {
+  return (
+    <footer className="bg-light p-3 shadow footer">
+      <Container>
+        <Row>
+          <Col sm={12} md={6} className="m-md-0">
+            <p className="m-md-0 copyright">© 2021 Jake Fullmer</p>
+          </Col>
+          <Col sm={12} md={6} className="d-flex justify-content-md-end justify-content-center">
+            <ContactIcons></ContactIcons>
+          </Col>
+        </Row>
+      </Container>
     </footer>
-    );
-  }
+  )
 }
+
+export default Footer;

@@ -1,49 +1,41 @@
-import React, { Component } from 'react';
-export default class Header extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <React.Fragment>
-      
-      <header id="home">
-         <nav id="nav-wrap" className="col-12 col-sm-12 ">
-            <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-          <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-            <ul id="nav" className="nav">
-               <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-               <li><a className="smoothscroll" href="#about">About</a></li>
-             <li><a className="smoothscroll" href="#resume">Resume</a></li>
-               <li><a className="smoothscroll" href="#portfolio">Works</a></li>
-               <li><a className="smoothscroll" href="#contact">Contact</a></li>
-            </ul>
-         </nav>
+import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap'
 
-         <div className="row banner">
-            <div className="banner-text">
-               <h1 className="responsive-headline">{resumeData.name}</h1>
-               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I work as a {resumeData.role}.{resumeData.roleDescription}
-               </h3>
-               <hr/>
-               <ul className="social">
-                  {
-                    resumeData.socialLinks && resumeData.socialLinks.map(item =>{
-                      return(
-                              <li key={item.name}>
-                                <a href={item.url} target="_blank"><i className={item.className}></i></a>
-                              </li>
-                            )
-                          }
-                    )
-                  }
-               </ul>
-            </div>
-         </div>
+// import bootstrap components
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-         <p className="scrolldown">
-            <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
-         </p>
-      </header>
-      </React.Fragment>
-    );
-  }
+// import custom components
+import ContactIcons from '../ContactIcons'
+
+function Header() {
+  return(
+    <>
+      <Navbar collapseOnSelect expand="lg" className="bg-light shadow">
+        <LinkContainer to="/about">
+        <Navbar.Brand>Jake Fullmer</Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <LinkContainer to="/about">
+              <Nav.Link>About Me</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/projects">
+              <Nav.Link>Projects</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="resume">
+              <Nav.Link>Resume</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="contact">
+              <Nav.Link>Contact</Nav.Link>
+            </LinkContainer>
+          </Nav>
+          <ContactIcons></ContactIcons>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
+  )
 }
+
+export default Header;
